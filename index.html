@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Game</title>
+	<link rel="stylesheet" href="style.css">
+	</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">Interactive Quiz Game</h1>
+            <p class="quiz-subtitle">Choose a category and test your knowledge</p>
+        </div>
+
+        <!-- Category Selection Screen -->
+        <div id="categoryScreen" class="category-screen">
+            <div class="category-selection">
+                <div class="category-card math" onclick="selectCategory('math')">
+                    <div class="category-count">5 questions</div>
+                    <div class="category-icon">🔢</div>
+                    <div class="category-title">Mathematics</div>
+                    <div class="category-description">Test your math skills with arithmetic, algebra, and geometry questions</div>
+                </div>
+
+                <div class="category-card science" onclick="selectCategory('science')">
+                    <div class="category-count">6 questions</div>
+                    <div class="category-icon">🧪</div>
+                    <div class="category-title">Science</div>
+                    <div class="category-description">Explore physics, chemistry, biology, and earth science concepts</div>
+                </div>
+
+                <div class="category-card social" onclick="selectCategory('social')">
+                    <div class="category-count">4 questions</div>
+                    <div class="category-icon">🏛️</div>
+                    <div class="category-title">Social Studies</div>
+                    <div class="category-description">Learn abodut civics, economics, and social structures</div>
+                </div>
+
+                <div class="category-card history" onclick="selectCategory('history')">
+                    <div class="category-count">5 questions</div>
+                    <div class="category-icon">📚</div>
+                    <div class="category-title">History</div>
+                    <div class="category-description">Journey through important historical events and figures</div>
+                </div>
+
+                <div class="category-card geography" onclick="selectCategory('geography')">
+                    <div class="category-count">4 questions</div>
+                    <div class="category-icon">🌍</div>
+                    <div class="category-title">Geography</div>
+                    <div class="category-description">Discover countries, capitals, landmarks, and natural features</div>
+                </div>
+
+                <div class="category-card general" onclick="selectCategory('general')">
+                    <div class="category-count">6 questions</div>
+                    <div class="category-icon">🎯</div>
+                    <div class="category-title">General Knowledge</div>
+                    <div class="category-description">Mixed topics covering various fields of knowledge</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="hidden">
+            <div class="current-category" id="currentCategory"></div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div id="questionContainer" class="question-container">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn btn-back" id="backToCategoryBtn" onclick="backToCategories()">← Categories</button>
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">Previous</button>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next</button>
+                <button class="btn btn-primary hidden" id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- Score Screen -->
+        <div id="scoreContainer" class="score-container hidden">
+            <h2 class="score-title">Quiz Complete!</h2>
+            <div class="current-category" id="scoreCategoryName"></div>
+            <div class="score-value" id="finalScore">0/0</div>
+            <p class="score-message" id="scoreMessage">Great job!</p>
+            <div class="score-details" id="scoreDetails"></div>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" onclick="restartQuiz()">Restart This Quiz</button>
+                <button class="btn btn-back" onclick="backToCategories()">Choose New Category</button>
+            </div>
+        </div>
+    </div>
+	<script src="script.js"></script>
+	<body>
+	</html>
+	
